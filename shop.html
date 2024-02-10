@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Gundam Base Wakanda</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cart.html">Cart</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Gundam!</h2>
+    
+    <section class="product">
+      <img src="img/gundam1.jpg" alt="Gundam 1">
+      <h3>Gundam 1</h3>
+      <p>$20.00</p>
+      <button class="add-to-cart" data-name="Gundam 1" data-price="20.00">Add to Cart</button>
+    </section>
+
+    <section class="product">
+      <img src="img/gundam1.jpg" alt="Gundam 2">
+      <h3>Gundam 2</h3>
+      <p>$25.00</p>
+      <button class="add-to-cart" data-name="Gundam 2" data-price="25.00">Add to Cart</button>
+    </section>
+
+    <section class="product">
+      <img src="img/gundam1.jpg" alt="Gundam 3">
+      <h3>Gundam 3</h3>
+      <p>$30.00</p>
+      <button class="add-to-cart" data-name="Gundam 3" data-price="30.00">Add to Cart</button>
+    </section>
+
+    <section class="product">
+      <img src="img/gundam1.jpg" alt="Gundam 4">
+      <h3>Gundam 4</h3>
+      <p>$35.00</p>
+      <button class="add-to-cart" data-name="Gundam 4" data-price="35.00">Add to Cart</button>
+    </section>
+
+    <section class="product">
+      <img src="img/gundam1.jpg" alt="Gundam 5">
+      <h3>Gundam 5</h3>
+      <p>$40.00</p>
+      <button class="add-to-cart" data-name="Gundam 5" data-price="40.00">Add to Cart</button>
+    </section>
+
+    <section class="product">
+      <img src="img/gundam1.jpg" alt="Gundam 6">
+      <h3>Gundam 6</h3>
+      <p>$45.00</p>
+      <button class="add-to-cart" data-name="Gundam 6" data-price="45.00">Add to Cart</button>
+    </section>
+
+    <section class="product">
+      <img src="img/gundam1.jpg" alt="Gundam 7">
+      <h3>Gundam 7</h3>
+      <p>$50.00</p>
+      <button class="add-to-cart" data-name="Gundam 7" data-price="50.00">Add to Cart</button>
+    </section>
+
+    <section class="product">
+      <img src="img/gundam1.jpg" alt="Gundam 8">
+      <h3>Gundam 8</h3>
+      <p>$55.00</p>
+      <button class="add-to-cart" data-name="Gundam 8" data-price="55.00">Add to Cart</button>
+    </section>
+
+    <section class="product">
+      <img src="img/gundam1.jpg" alt="Gundam 9">
+      <h3>Gundam 9</h3>
+      <p>$60.00</p>
+      <button class="add-to-cart" data-name="Gundam 9" data-price="60.00">Add to Cart</button>
+    </section>
+
+    <section class="product">
+      <img src="img/gundam1.jpg" alt="Gundam 10">
+      <h3>Gundam 10</h3>
+      <p>$65.00</p>
+      <button class="add-to-cart" data-name="Gundam 10" data-price="65.00">Add to Cart</button>
+    </section>
+
+    <section class="product">
+      <img src="img/gundam1.jpg" alt="Gundam 11">
+      <h3>Gundam 11</h3>
+      <p>$70.00</p>
+      <button class="add-to-cart" data-name="Gundam 11" data-price="70.00">Add to Cart</button>
+    </section>
+
+    <section class="product">
+      <img src="img/gundam1.jpg" alt="Gundam 12">
+      <h3>Gundam 12</h3>
+      <p>$75.00</p>
+      <button class="add-to-cart" data-name="Gundam 12" data-price="75.00">Add to Cart</button>
+    </section>
+
+    <section class="product">
+      <img src="img/gundam1.jpg" alt="Gundam 13">
+      <h3>Gundam 13</h3>
+      <p>$80.00</p>
+      <button class="add-to-cart" data-name="Gundam 13" data-price="80.00">Add to Cart</button>
+    </section>
+
+    <section class="product">
+      <img src="img/gundam1.jpg" alt="Gundam 14">
+      <h3>Gundam 14</h3>
+      <p>$85.00</p>
+      <button class="add-to-cart" data-name="Gundam 14" data-price="85.00">Add to Cart</button>
+    </section>
+
+    <section class="product">
+      <img src="img/gundam1.jpg" alt="Gundam 15">
+      <h3>Gundam 15</h3>
+      <p>$90.00</p>
+      <button class="add-to-cart" data-name="Gundam 15" data-price="90.00">Add to Cart</button>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Gundam Base Wakanda. All rights reserved.</p>
+  </footer>
+
+  <script src="cart.js"></script>
+  <script>
+    // Add event listener to all "Add to Cart" buttons
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+      button.addEventListener('click', () => {
+        const name = button.getAttribute('data-name');
+        const price = parseFloat(button.getAttribute('data-price'));
+        const item = { name, price };
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.push(item);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert('Item added to cart: ' + name);
+      });
+    });
+  </script>
+</body>
+</html>

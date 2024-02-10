@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gundam Base Wakanda</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <img src="img/logo.png" alt="Gundam Base Wakanda Logo" style="max-width: 100px; max-height: 100px; height: auto;"">
+    <h1>Gundam Base Wakanda</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cart.html">Cart</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="featured-product">
+      <div class="featured-image">
+        <img src="img/gundam1.jpg" alt="Featured Product" style="max-width: 100%; max-height: 200px; height: auto;">
+      </div>
+      <div class="featured-details">
+        <h2>Featured Product</h2>
+        <p>RX-78-2 Gundam, diproduksi langsung menggunakan besi gundarium yang ditambang di bulan, kualitas robot satu ini melebihi semua yang ada di pasaran</p>
+        <p class="price">$49.99</p>
+        <button class="add-to-cart" data-name="Featured Product" data-price="49.99">Add to Cart</button>
+      </div>
+    </section>
+
+    <section id="latest-products">
+        <h2>Latest Products</h2>
+        <div class="product">
+          <img src="img/gundam2.jpg" alt="Gundam 2" style="max-width: 100%; max-height: 250px; height: auto;">
+          <h3>Gundam 2</h3>
+          <p>RX-79 Gundam Ground Type</p>
+          <p class="price">$39.99</p>
+          <button class="add-to-cart" data-name="Gundam 2" data-price="39.99">Add to Cart</button>
+        </div>
+             </section>
+      
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Gundam Base Wakanda. All rights reserved.</p>
+  </footer>
+
+  <script src="cart.js"></script>
+<script>
+  
+  function addToCart(name, price) {
+    const item = { name, price };
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push(item);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert('Item added to cart: ' + name);
+  }
+
+  
+  document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', () => {
+      const name = button.getAttribute('data-name');
+      const price = parseFloat(button.getAttribute('data-price'));
+      addToCart(name, price);
+    });
+  });
+</script>
+
+</body>
+</html>
